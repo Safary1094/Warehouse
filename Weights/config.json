@@ -1,0 +1,74 @@
+{
+  "size": [3,    15,    15  ],
+  "camera_res": 150,
+  "lifters_number": 1,
+  "movers_number": 0,
+  "shelves_height": [
+    2,3
+  ],
+  "shelves_row_num": [
+    0
+  ],
+  "box_amount": 5,
+  "mc_num": 500,
+  "act_space": {
+    "mover": 3,
+    "lifter": 3
+  },
+  "architecture": {
+    "mover": {
+      "pixel":[3, 64, 64],
+      "paddings": [0, 1, 1],
+      "window": [5, 5, 5],
+      "fine":[1, 32, 64,64],
+      "dense": [10369, 512, 512, 128]
+    },
+    "lifter": {
+      "pixel":[3, 64, 64],
+      "paddings": [0, 1, 1],
+      "window": [5, 5, 5],
+      "fine":[1, 32, 64],
+      "dense": [10369, 512, 512, 128]
+    },
+    "critic": {
+      "pixel":[3, 64, 64],
+      "paddings": [0, 1, 1],
+      "window": [5, 5, 5],
+      "fine":[1, 32, 64,64],
+      "dense": [10369, 512, 512, 128]
+    }
+  },
+  "learning_parameters": {
+    "envs_number": 1,
+    "inference": 0,
+    "load_model": 0,
+    "train_epochs": 5000000,
+    "trajectory_length": 100,
+    "environment_max_steps": 4000,
+    "lr": 0.0001,
+    "gamma": 0.99,
+    "lambda": 0.99,
+    "ent_coef": -0.03,
+    "opt_epochs": 2,
+    "batch_size": 1024
+  },
+  "rewards": {
+    "collision_penalty": -5,
+    "reach_box": 19,
+    "BOX_STORE_REW": 5,
+    "BOX_LEAVE_REW": 5,
+    "WRONG_LEVEL": -1,
+    "FORK_LIMIT_PEN": -10,
+    "WRONG_BOX_LEAVE": -10,
+    "PLAN_CHANGE_REW": -0,
+    "PLAN_TO_PICK_INBOX": 10,
+    "PLAN_TO_DROP_INBOX": 10,
+    "PLAN_TO_DROP_LEAVE": 10,
+    "PLAN_TO_PICK_LEAVE": 10
+  },
+  "move_blue_path": "urdf/mover_blue.urdf",
+  "move_yellow_path": "urdf/mover_yellow.urdf",
+  "lift_red_path": "urdf/lifter_red.urdf",
+  "box_urdf": "urdf/box.urdf",
+  "save_every_steps": 20000
+}
